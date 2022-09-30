@@ -16,15 +16,12 @@ class MenuPembelianInfo {
   });
 }
 
-// Penyesuaian harga jual
-// Smart Link e-commerce
-
 List demoMyFiles = [
   MenuPembelianInfo(
     title: "Permintaan pembelian",
     numOfFiles: 1328,
     svgSrc: "assets/icons/permintaan-pembelian.svg",
-    page: "/pengguna-umum",
+    page: "/permintaan-pembelian",
     color: primaryColor,
     percentage: 35,
   ),
@@ -32,7 +29,7 @@ List demoMyFiles = [
     title: "Pesanan pembelian",
     numOfFiles: 1328,
     svgSrc: "assets/icons/pesanan-pembelian.svg",
-    page: "/multi-mata-uang-umum",
+    page: "/pesanan-pembelian",
     color: Color(0xFFFFA113),
     percentage: 35,
   ),
@@ -40,7 +37,7 @@ List demoMyFiles = [
     title: "Faktur pembelian",
     numOfFiles: 1328,
     svgSrc: "assets/icons/faktur-pembelian.svg",
-    page: "/transaksi-umum",
+    page: "/faktur-pembelian",
     color: Color(0xFFA4CDFF),
     percentage: 10,
   ),
@@ -48,7 +45,7 @@ List demoMyFiles = [
     title: "Retur pembelian",
     numOfFiles: 5328,
     svgSrc: "assets/icons/retur-pembelian.svg",
-    page: "/fifo-umum",
+    page: "/retur-pembelian",
     color: Color(0xFF007EE5),
     percentage: 78,
   ),
@@ -56,7 +53,7 @@ List demoMyFiles = [
     title: "Penerimaan barang",
     numOfFiles: 1328,
     svgSrc: "assets/icons/penerimaan-barang.svg",
-    page: "/pengguna-umum",
+    page: "/penerimaan-barang",
     color: primaryColor,
     percentage: 35,
   ),
@@ -64,7 +61,7 @@ List demoMyFiles = [
     title: "Pembayaran pembelian",
     numOfFiles: 1328,
     svgSrc: "assets/icons/tukar-faktur.svg",
-    page: "/multi-mata-uang-umum",
+    page: "/pembayaran-pembelian",
     color: Color(0xFFFFA113),
     percentage: 35,
   ),
@@ -72,7 +69,7 @@ List demoMyFiles = [
     title: "Pengaturan pemasok",
     numOfFiles: 1328,
     svgSrc: "assets/icons/pengaturan-pemasuk.svg",
-    page: "/transaksi-umum",
+    page: "/pengaturan-pemasok",
     color: Color(0xFFA4CDFF),
     percentage: 10,
   ),
@@ -80,7 +77,7 @@ List demoMyFiles = [
     title: "Harga pemasok",
     numOfFiles: 5328,
     svgSrc: "assets/icons/harga-pemasok.svg",
-    page: "/fifo-umum",
+    page: "/harga-pemasok",
     color: Color(0xFF007EE5),
     percentage: 78,
   ),
@@ -88,7 +85,7 @@ List demoMyFiles = [
     title: "Faktur sebelum penerimaan",
     numOfFiles: 1328,
     svgSrc: "assets/icons/faktur-sebelum-penerimaan.svg",
-    page: "/pengguna-umum",
+    page: "/faktur-sebelum-penerimaan",
     color: primaryColor,
     percentage: 35,
   )

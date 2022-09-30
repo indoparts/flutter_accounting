@@ -37,6 +37,16 @@ abstract class Routes {
   static const PENGEPAKAN_BARANG = _Paths.PENGEPAKAN_BARANG;
   static const KONSINYASI = _Paths.KONSINYASI;
   static const KETENTUAN_PEMBAYARAN = _Paths.KETENTUAN_PEMBAYARAN;
+
+  static const PERMINTAAN_PEMBELIAN = _Paths.PERMINTAAN_PEMBELIAN;
+  static const PESANAN_PEMBELIAN = _Paths.PESANAN_PEMBELIAN;
+  static const FAKTUR_PEMBELIAN = _Paths.FAKTUR_PEMBELIAN;
+  static const RETUR_PEMBELIAN = _Paths.RETUR_PEMBELIAN;
+  static const PENERIMAAN_BARANG = _Paths.PENERIMAAN_BARANG;
+  static const PEMBAYARAN_PEMBELIAN = _Paths.PEMBAYARAN_PEMBELIAN;
+  static const PENGATURAN_PEMASOK = _Paths.PENGATURAN_PEMASOK;
+  static const HARGA_PEMASOK = _Paths.HARGA_PEMASOK;
+  static const FAKTUR_SEBELUM_PENERIMAAN = _Paths.FAKTUR_SEBELUM_PENERIMAAN;
 }
 
 abstract class _Paths {
@@ -75,4 +85,14 @@ abstract class _Paths {
   static const PENGEPAKAN_BARANG = '/pengepakan-barang';
   static const KONSINYASI = '/konsinyasi';
   static const KETENTUAN_PEMBAYARAN = '/ketentuan-pembayaran';
+
+  static const PERMINTAAN_PEMBELIAN = '/permintaan-pembelian';
+  static const PESANAN_PEMBELIAN = '/pesanan-pembelian';
+  static const FAKTUR_PEMBELIAN = '/faktur-pembelian';
+  static const RETUR_PEMBELIAN = '/retur-pembelian';
+  static const PENERIMAAN_BARANG = '/penerimaan-barang';
+  static const PEMBAYARAN_PEMBELIAN = '/pembayaran-pembelian';
+  static const PENGATURAN_PEMASOK = '/pengaturan-pemasok';
+  static const HARGA_PEMASOK = '/harga-pemasok';
+  static const FAKTUR_SEBELUM_PENERIMAAN = '/faktur-sebelum-penerimaan';
 }

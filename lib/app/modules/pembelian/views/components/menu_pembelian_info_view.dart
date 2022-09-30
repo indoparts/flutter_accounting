@@ -1,8 +1,10 @@
 import 'package:accounting_project/app/models/MenuPembelianInfo.dart';
+import 'package:accounting_project/app/routes/app_pages.dart';
 import 'package:accounting_project/constants.dart';
 import 'package:accounting_project/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 class MenuPembelianInfoView extends StatelessWidget {
   const MenuPembelianInfoView({
@@ -126,7 +128,40 @@ class FileInfoCard extends StatelessWidget {
                     .caption!
                     .copyWith(color: Colors.white70),
               ),
-              TextButton(onPressed: () {}, child: Text('Cek'))
+              TextButton(
+                  onPressed: () {
+                    switch (info.page) {
+                      case "/permintaan-pembelian":
+                        Get.offAllNamed(Routes.PERMINTAAN_PEMBELIAN);
+                        break;
+                      case "/pesanan-pembelian":
+                        Get.offAllNamed(Routes.PESANAN_PEMBELIAN);
+                        break;
+                      case "/faktur-pembelian":
+                        Get.offAllNamed(Routes.FAKTUR_PEMBELIAN);
+                        break;
+                      case "/retur-pembelian":
+                        Get.offAllNamed(Routes.RETUR_PEMBELIAN);
+                        break;
+                      case "/penerimaan-barang":
+                        Get.offAllNamed(Routes.PENERIMAAN_BARANG);
+                        break;
+                      case "/pembayaran-pembelian":
+                        Get.offAllNamed(Routes.PEMBAYARAN_PEMBELIAN);
+                        break;
+                      case "/pengaturan-pemasok":
+                        Get.offAllNamed(Routes.PENGATURAN_PEMASOK);
+                        break;
+                      case "/harga-pemasok":
+                        Get.offAllNamed(Routes.HARGA_PEMASOK);
+                        break;
+                      case "/faktur-sebelum-penerimaan":
+                        Get.offAllNamed(Routes.FAKTUR_SEBELUM_PENERIMAAN);
+                        break;
+                      default:
+                    }
+                  },
+                  child: Text('Lihat'))
             ],
           )
         ],

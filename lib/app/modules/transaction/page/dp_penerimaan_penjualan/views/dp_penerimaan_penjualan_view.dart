@@ -1,3 +1,11 @@
+import 'package:accounting_project/app/components/controllers/components_controller.dart';
+import 'package:accounting_project/app/components/views/appbar_view.dart';
+import 'package:accounting_project/app/components/views/bottomNavigation_view.dart';
+import 'package:accounting_project/app/components/views/header_view.dart';
+import 'package:accounting_project/app/components/views/sidebar_view.dart';
+import 'package:accounting_project/constants.dart';
+import 'package:accounting_project/responsive.dart';
+import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -6,20 +14,49 @@ import '../controllers/dp_penerimaan_penjualan_controller.dart';
 
 class DpPenerimaanPenjualanView
     extends GetView<DpPenerimaanPenjualanController> {
-  const DpPenerimaanPenjualanView({Key? key}) : super(key: key);
+  DpPenerimaanPenjualanView({Key? key}) : super(key: key);
+  final components = Get.put(ComponentsController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('DpPenerimaanPenjualanView'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Text(
-          'DpPenerimaanPenjualanView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
-    );
+        appBar: const PreferredSize(
+            preferredSize: Size.fromHeight(50.0), // here the desired height
+            child: AppbarView(
+              title: 'Penjualan/Uang muka & penerimaan penjualan',
+            )),
+        key: components.scaffoldKey,
+        drawer: SidebarView(),
+        body: WindowBorder(
+            color: secondaryColor,
+            width: 1,
+            child: SafeArea(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  if (Responsive.isDesktop(context))
+                    Expanded(
+                      child: SidebarView(),
+                    ),
+                  Expanded(
+                    flex: 5,
+                    child: SafeArea(
+                        child: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Column(
+                        children: const [
+                          HeaderView(
+                            title: 'Uang Muka & Penerimaan Penjualan Overview',
+                          ),
+                          // content here....
+                          // -------------------
+                          // content here....
+                        ],
+                      ),
+                    )),
+                  ),
+                ],
+              ),
+            )),
+        bottomNavigationBar: const BottomNavigationView());
   }
 }

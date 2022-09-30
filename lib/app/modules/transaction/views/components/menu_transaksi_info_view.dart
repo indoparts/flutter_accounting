@@ -1,8 +1,10 @@
 import 'package:accounting_project/app/models/MenuTransaksiInfo.dart';
+import 'package:accounting_project/app/routes/app_pages.dart';
 import 'package:accounting_project/constants.dart';
 import 'package:accounting_project/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 class MenuTransaksiInfoView extends StatelessWidget {
   const MenuTransaksiInfoView({
@@ -126,7 +128,50 @@ class FileInfoCard extends StatelessWidget {
                     .caption!
                     .copyWith(color: Colors.white70),
               ),
-              TextButton(onPressed: () {}, child: Text('Lihat'))
+              TextButton(
+                  onPressed: () {
+                    switch (info.page) {
+                      case "/penawaran-pesanan-penjualan":
+                        Get.offAllNamed(Routes.PENAWARAN_PESANAN_PENJUALAN);
+                        break;
+                      case "/faktur-penjualan":
+                        Get.offAllNamed(Routes.FAKTUR_PENJUALAN);
+                        break;
+                      case "/retur-klaim-pelanggan":
+                        Get.offAllNamed(Routes.RETUR_KLAIM_PELANGGAN);
+                        break;
+                      case "/pengiriman-pesanan":
+                        Get.offAllNamed(Routes.PENGIRIMAN_PESANAN);
+                        break;
+                      case "/dp-penerimaan-penjualan":
+                        Get.offAllNamed(Routes.DP_PENERIMAAN_PENJUALAN);
+                        break;
+                      case "/tukar-faktur":
+                        Get.offAllNamed(Routes.TUKAR_FAKTUR);
+                        break;
+                      case "/komisi-penjualan":
+                        Get.offAllNamed(Routes.KOMISI_PENJUALAN);
+                        break;
+                      case "/pengaturan-pelanggan-kategori-harga":
+                        Get.offAllNamed(
+                            Routes.PENGATURAN_PELANGGAN_KATEGORI_HARGA);
+                        break;
+                      case "/faktur-sebelum-pengiriman":
+                        Get.offAllNamed(Routes.FAKTUR_SEBELUM_PENGIRIMAN);
+                        break;
+                      case "/pengepakan-barang":
+                        Get.offAllNamed(Routes.PENGEPAKAN_BARANG);
+                        break;
+                      case "/konsinyasi":
+                        Get.offAllNamed(Routes.KONSINYASI);
+                        break;
+                      case "/ketentuan-pembayaran":
+                        Get.offAllNamed(Routes.KETENTUAN_PEMBAYARAN);
+                        break;
+                      default:
+                    }
+                  },
+                  child: Text('Lihat'))
             ],
           )
         ],

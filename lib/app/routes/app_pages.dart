@@ -30,6 +30,24 @@ import '../modules/kasbank/views/kasbank_view.dart';
 import '../modules/manufaktur/bindings/manufaktur_binding.dart';
 import '../modules/manufaktur/views/manufaktur_view.dart';
 import '../modules/pembelian/bindings/pembelian_binding.dart';
+import '../modules/pembelian/page/faktur_pembelian/bindings/faktur_pembelian_binding.dart';
+import '../modules/pembelian/page/faktur_pembelian/views/faktur_pembelian_view.dart';
+import '../modules/pembelian/page/faktur_sebelum_penerimaan/bindings/faktur_sebelum_penerimaan_binding.dart';
+import '../modules/pembelian/page/faktur_sebelum_penerimaan/views/faktur_sebelum_penerimaan_view.dart';
+import '../modules/pembelian/page/harga_pemasok/bindings/harga_pemasok_binding.dart';
+import '../modules/pembelian/page/harga_pemasok/views/harga_pemasok_view.dart';
+import '../modules/pembelian/page/pembayaran_pembelian/bindings/pembayaran_pembelian_binding.dart';
+import '../modules/pembelian/page/pembayaran_pembelian/views/pembayaran_pembelian_view.dart';
+import '../modules/pembelian/page/penerimaan_barang/bindings/penerimaan_barang_binding.dart';
+import '../modules/pembelian/page/penerimaan_barang/views/penerimaan_barang_view.dart';
+import '../modules/pembelian/page/pengaturan_pemasok/bindings/pengaturan_pemasok_binding.dart';
+import '../modules/pembelian/page/pengaturan_pemasok/views/pengaturan_pemasok_view.dart';
+import '../modules/pembelian/page/permintaan_pembelian/bindings/permintaan_pembelian_binding.dart';
+import '../modules/pembelian/page/permintaan_pembelian/views/permintaan_pembelian_view.dart';
+import '../modules/pembelian/page/pesanan_pembelian/bindings/pesanan_pembelian_binding.dart';
+import '../modules/pembelian/page/pesanan_pembelian/views/pesanan_pembelian_view.dart';
+import '../modules/pembelian/page/retur_pembelian/bindings/retur_pembelian_binding.dart';
+import '../modules/pembelian/page/retur_pembelian/views/retur_pembelian_view.dart';
 import '../modules/pembelian/views/pembelian_view.dart';
 import '../modules/perpajakan/bindings/perpajakan_binding.dart';
 import '../modules/perpajakan/views/perpajakan_view.dart';
@@ -126,10 +144,83 @@ class AppPages {
         binding: AksesUmumBinding(),
         transition: Transition.noTransition),
     GetPage(
-        name: _Paths.TRANSACTION,
-        page: () => TransactionView(),
-        binding: TransactionBinding(),
-        transition: Transition.noTransition),
+      name: _Paths.TRANSACTION,
+      page: () => TransactionView(),
+      binding: TransactionBinding(),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: _Paths.PENAWARAN_PESANAN_PENJUALAN,
+      page: () => PenawaranPesananPenjualanView(),
+      binding: PenawaranPesananPenjualanBinding(),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: _Paths.FAKTUR_PENJUALAN,
+      page: () => FakturPenjualanView(),
+      binding: FakturPenjualanBinding(),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: _Paths.RETUR_KLAIM_PELANGGAN,
+      page: () => ReturKlaimPelangganView(),
+      binding: ReturKlaimPelangganBinding(),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: _Paths.PENGIRIMAN_PESANAN,
+      page: () => PengirimanPesananView(),
+      binding: PengirimanPesananBinding(),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: _Paths.DP_PENERIMAAN_PENJUALAN,
+      page: () => DpPenerimaanPenjualanView(),
+      binding: DpPenerimaanPenjualanBinding(),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: _Paths.TUKAR_FAKTUR,
+      page: () => TukarFakturView(),
+      binding: TukarFakturBinding(),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: _Paths.KOMISI_PENJUALAN,
+      page: () => KomisiPenjualanView(),
+      binding: KomisiPenjualanBinding(),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: _Paths.PENGATURAN_PELANGGAN_KATEGORI_HARGA,
+      page: () => PengaturanPelangganKategoriHargaView(),
+      binding: PengaturanPelangganKategoriHargaBinding(),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: _Paths.FAKTUR_SEBELUM_PENGIRIMAN,
+      page: () => FakturSebelumPengirimanView(),
+      binding: FakturSebelumPengirimanBinding(),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: _Paths.PENGEPAKAN_BARANG,
+      page: () => PengepakanBarangView(),
+      binding: PengepakanBarangBinding(),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: _Paths.KONSINYASI,
+      page: () => KonsinyasiView(),
+      binding: KonsinyasiBinding(),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: _Paths.KETENTUAN_PEMBAYARAN,
+      page: () => KetentuanPembayaranView(),
+      binding: KetentuanPembayaranBinding(),
+      transition: Transition.noTransition,
+    ),
     GetPage(
         name: _Paths.PEMBELIAN,
         page: () => PembelianView(),
@@ -166,66 +257,49 @@ class AppPages {
         binding: AsettetapBinding(),
         transition: Transition.noTransition),
     GetPage(
-      name: _Paths.PENAWARAN_PESANAN_PENJUALAN,
-      page: () => const PenawaranPesananPenjualanView(),
-      binding: PenawaranPesananPenjualanBinding(),
-      children: [
-        GetPage(
-          name: _Paths.FAKTUR_PENJUALAN,
-          page: () => const FakturPenjualanView(),
-          binding: FakturPenjualanBinding(),
-        ),
-        GetPage(
-          name: _Paths.RETUR_KLAIM_PELANGGAN,
-          page: () => const ReturKlaimPelangganView(),
-          binding: ReturKlaimPelangganBinding(),
-        ),
-        GetPage(
-          name: _Paths.PENGIRIMAN_PESANAN,
-          page: () => const PengirimanPesananView(),
-          binding: PengirimanPesananBinding(),
-        ),
-        GetPage(
-          name: _Paths.DP_PENERIMAAN_PENJUALAN,
-          page: () => const DpPenerimaanPenjualanView(),
-          binding: DpPenerimaanPenjualanBinding(),
-        ),
-        GetPage(
-          name: _Paths.TUKAR_FAKTUR,
-          page: () => const TukarFakturView(),
-          binding: TukarFakturBinding(),
-        ),
-        GetPage(
-          name: _Paths.KOMISI_PENJUALAN,
-          page: () => const KomisiPenjualanView(),
-          binding: KomisiPenjualanBinding(),
-        ),
-        GetPage(
-          name: _Paths.PENGATURAN_PELANGGAN_KATEGORI_HARGA,
-          page: () => const PengaturanPelangganKategoriHargaView(),
-          binding: PengaturanPelangganKategoriHargaBinding(),
-        ),
-        GetPage(
-          name: _Paths.FAKTUR_SEBELUM_PENGIRIMAN,
-          page: () => const FakturSebelumPengirimanView(),
-          binding: FakturSebelumPengirimanBinding(),
-        ),
-        GetPage(
-          name: _Paths.PENGEPAKAN_BARANG,
-          page: () => const PengepakanBarangView(),
-          binding: PengepakanBarangBinding(),
-        ),
-        GetPage(
-          name: _Paths.KONSINYASI,
-          page: () => const KonsinyasiView(),
-          binding: KonsinyasiBinding(),
-        ),
-        GetPage(
-          name: _Paths.KETENTUAN_PEMBAYARAN,
-          page: () => const KetentuanPembayaranView(),
-          binding: KetentuanPembayaranBinding(),
-        ),
-      ],
-    ),
+        name: _Paths.PERMINTAAN_PEMBELIAN,
+        page: () => PermintaanPembelianView(),
+        binding: PermintaanPembelianBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.PESANAN_PEMBELIAN,
+        page: () => PesananPembelianView(),
+        binding: PesananPembelianBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.FAKTUR_PEMBELIAN,
+        page: () => FakturPembelianView(),
+        binding: FakturPembelianBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.RETUR_PEMBELIAN,
+        page: () => ReturPembelianView(),
+        binding: ReturPembelianBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.PENERIMAAN_BARANG,
+        page: () => PenerimaanBarangView(),
+        binding: PenerimaanBarangBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.PEMBAYARAN_PEMBELIAN,
+        page: () => PembayaranPembelianView(),
+        binding: PembayaranPembelianBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.PENGATURAN_PEMASOK,
+        page: () => PengaturanPemasokView(),
+        binding: PengaturanPemasokBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.HARGA_PEMASOK,
+        page: () => HargaPemasokView(),
+        binding: HargaPemasokBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.FAKTUR_SEBELUM_PENERIMAAN,
+        page: () => FakturSebelumPenerimaanView(),
+        binding: FakturSebelumPenerimaanBinding(),
+        transition: Transition.noTransition),
   ];
 }
