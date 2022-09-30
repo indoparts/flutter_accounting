@@ -164,7 +164,7 @@ class FileInfoCard extends StatelessWidget {
                       default:
                     }
                   },
-                  child: Text('Cek'))
+                  child: Text('Lihat'))
             ],
           )
         ],

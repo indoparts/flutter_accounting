@@ -37,7 +37,7 @@ class HomeView extends GetView<HomeController> {
                     Expanded(
                       child: SidebarView(),
                     ),
-                  const Expanded(
+                  Expanded(
                     flex: 5,
                     child: DashboardView(),
                   ),
