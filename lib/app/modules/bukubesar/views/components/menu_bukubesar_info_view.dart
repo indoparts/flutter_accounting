@@ -1,8 +1,10 @@
 import 'package:accounting_project/app/models/MenuBukuBesarInfo.dart';
+import 'package:accounting_project/app/routes/app_pages.dart';
 import 'package:accounting_project/constants.dart';
 import 'package:accounting_project/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 class MenuBukuBesarInfoView extends StatelessWidget {
   const MenuBukuBesarInfoView({
@@ -126,7 +128,31 @@ class FileInfoCard extends StatelessWidget {
                     .caption!
                     .copyWith(color: Colors.white70),
               ),
-              TextButton(onPressed: () {}, child: Text('Cek'))
+              TextButton(
+                  onPressed: () {
+                    switch (info.page) {
+                      case "/jurnal-umum-bukubesar":
+                        Get.offAllNamed(Routes.JURNAL_UMUM_BUKUBESAR);
+                        break;
+                      case "/akun-perkiraan-bukubesar":
+                        Get.offAllNamed(Routes.AKUN_PERKIRAAN_BUKUBESAR);
+                        break;
+                      case "/histori-akun-bukubesar":
+                        Get.offAllNamed(Routes.HISTORI_AKUN_BUKUBESAR);
+                        break;
+                      case "/log-aktivitas-bukubesar":
+                        Get.offAllNamed(Routes.LOG_AKTIVITAS_BUKUBESAR);
+                        break;
+                      case "/anggaran-bukubesar":
+                        Get.offAllNamed(Routes.ANGGARAN_BUKUBESAR);
+                        break;
+                      case "/pencatatan-beban-bukubesar":
+                        Get.offAllNamed(Routes.PENCATATAN_BEBAN_BUKUBESAR);
+                        break;
+                      default:
+                    }
+                  },
+                  child: Text('Lihat'))
             ],
           )
         ],

@@ -1,8 +1,10 @@
 import 'package:accounting_project/app/models/MenuPersediaanInfo.dart';
+import 'package:accounting_project/app/routes/app_pages.dart';
 import 'package:accounting_project/constants.dart';
 import 'package:accounting_project/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 class MenuPersediaanInfoView extends StatelessWidget {
   const MenuPersediaanInfoView({
@@ -126,7 +128,41 @@ class FileInfoCard extends StatelessWidget {
                     .caption!
                     .copyWith(color: Colors.white70),
               ),
-              TextButton(onPressed: () {}, child: Text('Cek'))
+              TextButton(
+                  onPressed: () {
+                    switch (info.page) {
+                      case "/multi-gudang-persediaan":
+                        Get.offAllNamed(Routes.MULTI_GUDANG_PERSEDIAAN);
+                        break;
+                      case "/multi-satuan-persediaan":
+                        Get.offAllNamed(Routes.MULTI_SATUAN_PERSEDIAAN);
+                        break;
+                      case "/nomor-batch-persediaan":
+                        Get.offAllNamed(Routes.NOMOR_BATCH_PERSEDIAAN);
+                        break;
+                      case "/job-costing-persediaan":
+                        Get.offAllNamed(Routes.JOB_COSTING_PERSEDIAAN);
+                        break;
+                      case "/transfer-persediaan":
+                        Get.offAllNamed(Routes.TRANSFER_PERSEDIAAN);
+                        break;
+                      case "/stok-opname-persediaan":
+                        Get.offAllNamed(Routes.STOK_OPNAME_PERSEDIAAN);
+                        break;
+                      case "/penyesuaian-persediaan":
+                        Get.offAllNamed(Routes.PENYESUAIAN_PERSEDIAAN);
+                        break;
+                      case "/pengaturan-persediaan":
+                        Get.offAllNamed(Routes.PENGATURAN_PERSEDIAAN);
+                        break;
+                      case "/penyesuaian-harga-pemasok-persediaan":
+                        Get.offAllNamed(
+                            Routes.PENYESUAIAN_HARGA_PEMASOK_PERSEDIAAN);
+                        break;
+                      default:
+                    }
+                  },
+                  child: Text('Lihat'))
             ],
           )
         ],

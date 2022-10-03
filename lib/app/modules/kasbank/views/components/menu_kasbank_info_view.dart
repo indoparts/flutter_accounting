@@ -1,8 +1,10 @@
 import 'package:accounting_project/app/models/MenuKasBankInfo.dart';
+import 'package:accounting_project/app/routes/app_pages.dart';
 import 'package:accounting_project/constants.dart';
 import 'package:accounting_project/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 class MenuKasBankInfoView extends StatelessWidget {
   const MenuKasBankInfoView({
@@ -126,7 +128,28 @@ class FileInfoCard extends StatelessWidget {
                     .caption!
                     .copyWith(color: Colors.white70),
               ),
-              TextButton(onPressed: () {}, child: Text('Cek'))
+              TextButton(
+                  onPressed: () {
+                    switch (info.page) {
+                      case "/pembayaran-kasbank":
+                        Get.offAllNamed(Routes.PEMBAYARAN_KASBANK);
+                        break;
+                      case "/penerimaan-kasbank":
+                        Get.offAllNamed(Routes.PENERIMAAN_KASBANK);
+                        break;
+                      case "/transfer-bank-kasbank":
+                        Get.offAllNamed(Routes.TRANSFER_BANK_KASBANK);
+                        break;
+                      case "/rekening-koran-kasbank":
+                        Get.offAllNamed(Routes.REKENING_KORAN_KASBANK);
+                        break;
+                      case "/rekonsiliasi-bank-kasbank":
+                        Get.offAllNamed(Routes.REKONSILIASI_BANK_KASBANK);
+                        break;
+                      default:
+                    }
+                  },
+                  child: Text('Lihat'))
             ],
           )
         ],

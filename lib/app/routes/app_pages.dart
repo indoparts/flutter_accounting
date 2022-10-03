@@ -3,6 +3,18 @@ import 'package:get/get.dart';
 import '../modules/asettetap/bindings/asettetap_binding.dart';
 import '../modules/asettetap/views/asettetap_view.dart';
 import '../modules/bukubesar/bindings/bukubesar_binding.dart';
+import '../modules/bukubesar/page/akun_perkiraan_bukubesar/bindings/akun_perkiraan_bukubesar_binding.dart';
+import '../modules/bukubesar/page/akun_perkiraan_bukubesar/views/akun_perkiraan_bukubesar_view.dart';
+import '../modules/bukubesar/page/anggaran_bukubesar/bindings/anggaran_bukubesar_binding.dart';
+import '../modules/bukubesar/page/anggaran_bukubesar/views/anggaran_bukubesar_view.dart';
+import '../modules/bukubesar/page/histori_akun_bukubesar/bindings/histori_akun_bukubesar_binding.dart';
+import '../modules/bukubesar/page/histori_akun_bukubesar/views/histori_akun_bukubesar_view.dart';
+import '../modules/bukubesar/page/jurnal_umum_bukubesar/bindings/jurnal_umum_bukubesar_binding.dart';
+import '../modules/bukubesar/page/jurnal_umum_bukubesar/views/jurnal_umum_bukubesar_view.dart';
+import '../modules/bukubesar/page/log_aktivitas_bukubesar/bindings/log_aktivitas_bukubesar_binding.dart';
+import '../modules/bukubesar/page/log_aktivitas_bukubesar/views/log_aktivitas_bukubesar_view.dart';
+import '../modules/bukubesar/page/pencatatan_beban_bukubesar/bindings/pencatatan_beban_bukubesar_binding.dart';
+import '../modules/bukubesar/page/pencatatan_beban_bukubesar/views/pencatatan_beban_bukubesar_view.dart';
 import '../modules/bukubesar/views/bukubesar_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/page/akses_umum/bindings/akses_umum_binding.dart';
@@ -26,6 +38,16 @@ import '../modules/home/page/transaksi_umum/bindings/transaksi_umum_binding.dart
 import '../modules/home/page/transaksi_umum/views/transaksi_umum_view.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/kasbank/bindings/kasbank_binding.dart';
+import '../modules/kasbank/page/pembayaran_kasbank/bindings/pembayaran_kasbank_binding.dart';
+import '../modules/kasbank/page/pembayaran_kasbank/views/pembayaran_kasbank_view.dart';
+import '../modules/kasbank/page/penerimaan_kasbank/bindings/penerimaan_kasbank_binding.dart';
+import '../modules/kasbank/page/penerimaan_kasbank/views/penerimaan_kasbank_view.dart';
+import '../modules/kasbank/page/rekening_koran_kasbank/bindings/rekening_koran_kasbank_binding.dart';
+import '../modules/kasbank/page/rekening_koran_kasbank/views/rekening_koran_kasbank_view.dart';
+import '../modules/kasbank/page/rekonsiliasi_bank_kasbank/bindings/rekonsiliasi_bank_kasbank_binding.dart';
+import '../modules/kasbank/page/rekonsiliasi_bank_kasbank/views/rekonsiliasi_bank_kasbank_view.dart';
+import '../modules/kasbank/page/transfer_bank_kasbank/bindings/transfer_bank_kasbank_binding.dart';
+import '../modules/kasbank/page/transfer_bank_kasbank/views/transfer_bank_kasbank_view.dart';
 import '../modules/kasbank/views/kasbank_view.dart';
 import '../modules/manufaktur/bindings/manufaktur_binding.dart';
 import '../modules/manufaktur/views/manufaktur_view.dart';
@@ -52,6 +74,24 @@ import '../modules/pembelian/views/pembelian_view.dart';
 import '../modules/perpajakan/bindings/perpajakan_binding.dart';
 import '../modules/perpajakan/views/perpajakan_view.dart';
 import '../modules/persediaan/bindings/persediaan_binding.dart';
+import '../modules/persediaan/page/job_costing_persediaan/bindings/job_costing_persediaan_binding.dart';
+import '../modules/persediaan/page/job_costing_persediaan/views/job_costing_persediaan_view.dart';
+import '../modules/persediaan/page/multi_gudang_persediaan/bindings/multi_gudang_persediaan_binding.dart';
+import '../modules/persediaan/page/multi_gudang_persediaan/views/multi_gudang_persediaan_view.dart';
+import '../modules/persediaan/page/multi_satuan_persediaan/bindings/multi_satuan_persediaan_binding.dart';
+import '../modules/persediaan/page/multi_satuan_persediaan/views/multi_satuan_persediaan_view.dart';
+import '../modules/persediaan/page/nomor_batch_persediaan/bindings/nomor_batch_persediaan_binding.dart';
+import '../modules/persediaan/page/nomor_batch_persediaan/views/nomor_batch_persediaan_view.dart';
+import '../modules/persediaan/page/pengaturan_persediaan/bindings/pengaturan_persediaan_binding.dart';
+import '../modules/persediaan/page/pengaturan_persediaan/views/pengaturan_persediaan_view.dart';
+import '../modules/persediaan/page/penyesuaian_harga_pemasok_persediaan/bindings/penyesuaian_harga_pemasok_persediaan_binding.dart';
+import '../modules/persediaan/page/penyesuaian_harga_pemasok_persediaan/views/penyesuaian_harga_pemasok_persediaan_view.dart';
+import '../modules/persediaan/page/penyesuaian_persediaan/bindings/penyesuaian_persediaan_binding.dart';
+import '../modules/persediaan/page/penyesuaian_persediaan/views/penyesuaian_persediaan_view.dart';
+import '../modules/persediaan/page/stok_opname_persediaan/bindings/stok_opname_persediaan_binding.dart';
+import '../modules/persediaan/page/stok_opname_persediaan/views/stok_opname_persediaan_view.dart';
+import '../modules/persediaan/page/transfer_persediaan/bindings/transfer_persediaan_binding.dart';
+import '../modules/persediaan/page/transfer_persediaan/views/transfer_persediaan_view.dart';
 import '../modules/persediaan/views/persediaan_view.dart';
 import '../modules/transaction/bindings/transaction_binding.dart';
 import '../modules/transaction/page/dp_penerimaan_penjualan/bindings/dp_penerimaan_penjualan_binding.dart';
@@ -300,6 +340,106 @@ class AppPages {
         name: _Paths.FAKTUR_SEBELUM_PENERIMAAN,
         page: () => FakturSebelumPenerimaanView(),
         binding: FakturSebelumPenerimaanBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.MULTI_GUDANG_PERSEDIAAN,
+        page: () => MultiGudangPersediaanView(),
+        binding: MultiGudangPersediaanBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.MULTI_SATUAN_PERSEDIAAN,
+        page: () => MultiSatuanPersediaanView(),
+        binding: MultiSatuanPersediaanBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.NOMOR_BATCH_PERSEDIAAN,
+        page: () => NomorBatchPersediaanView(),
+        binding: NomorBatchPersediaanBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.JOB_COSTING_PERSEDIAAN,
+        page: () => JobCostingPersediaanView(),
+        binding: JobCostingPersediaanBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.TRANSFER_PERSEDIAAN,
+        page: () => TransferPersediaanView(),
+        binding: TransferPersediaanBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.STOK_OPNAME_PERSEDIAAN,
+        page: () => StokOpnamePersediaanView(),
+        binding: StokOpnamePersediaanBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.PENYESUAIAN_PERSEDIAAN,
+        page: () => PenyesuaianPersediaanView(),
+        binding: PenyesuaianPersediaanBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.PENGATURAN_PERSEDIAAN,
+        page: () => PengaturanPersediaanView(),
+        binding: PengaturanPersediaanBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.PENYESUAIAN_HARGA_PEMASOK_PERSEDIAAN,
+        page: () => PenyesuaianHargaPemasokPersediaanView(),
+        binding: PenyesuaianHargaPemasokPersediaanBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.JURNAL_UMUM_BUKUBESAR,
+        page: () => JurnalUmumBukubesarView(),
+        binding: JurnalUmumBukubesarBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.AKUN_PERKIRAAN_BUKUBESAR,
+        page: () => AkunPerkiraanBukubesarView(),
+        binding: AkunPerkiraanBukubesarBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.HISTORI_AKUN_BUKUBESAR,
+        page: () => HistoriAkunBukubesarView(),
+        binding: HistoriAkunBukubesarBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.LOG_AKTIVITAS_BUKUBESAR,
+        page: () => LogAktivitasBukubesarView(),
+        binding: LogAktivitasBukubesarBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.ANGGARAN_BUKUBESAR,
+        page: () => AnggaranBukubesarView(),
+        binding: AnggaranBukubesarBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.PENCATATAN_BEBAN_BUKUBESAR,
+        page: () => PencatatanBebanBukubesarView(),
+        binding: PencatatanBebanBukubesarBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.PEMBAYARAN_KASBANK,
+        page: () => PembayaranKasbankView(),
+        binding: PembayaranKasbankBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.PENERIMAAN_KASBANK,
+        page: () => PenerimaanKasbankView(),
+        binding: PenerimaanKasbankBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.TRANSFER_BANK_KASBANK,
+        page: () => TransferBankKasbankView(),
+        binding: TransferBankKasbankBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.REKENING_KORAN_KASBANK,
+        page: () => RekeningKoranKasbankView(),
+        binding: RekeningKoranKasbankBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.REKONSILIASI_BANK_KASBANK,
+        page: () => RekonsiliasiBankKasbankView(),
+        binding: RekonsiliasiBankKasbankBinding(),
         transition: Transition.noTransition),
   ];
 }
