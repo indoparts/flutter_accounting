@@ -5,7 +5,6 @@ import 'package:accounting_project/app/modules/home/page/pengguna_umum/controlle
 import 'package:accounting_project/app/routes/app_pages.dart';
 import 'package:accounting_project/constants.dart';
 import 'package:accounting_project/responsive.dart';
-import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -76,54 +75,63 @@ class PenggunaUmumPageView extends GetView<PenggunaUmumController> {
                         child: const Icon(Icons.search),
                       ),
                     ),
+                    color: secondaryColor,
                   ))
               ],
             ),
             const SizedBox(height: defaultPadding),
             Expanded(
-              child: Container(
-                padding: const EdgeInsets.all(defaultPadding),
-                decoration: const BoxDecoration(
-                  color: secondaryColor,
-                  borderRadius: const BorderRadius.all(Radius.circular(10)),
-                ),
-                child: DataTable2(
-                    columnSpacing: 12,
-                    horizontalMargin: 12,
-                    minWidth: 600,
-                    smRatio: 0.75,
-                    lmRatio: 1.5,
-                    columns: const [
-                      DataColumn2(
-                        size: ColumnSize.S,
-                        label: Text('Column A'),
+                child: SingleChildScrollView(
+              child: Obx(() => PaginatedDataTable(
+                    header: const Text('Nutrition'),
+                    rowsPerPage: controller.PerPage.value,
+                    availableRowsPerPage: const <int>[5, 10, 20, 30, 40, 50],
+                    onPageChanged: (value) => print(value),
+                    onRowsPerPageChanged: (int? value) {
+                      if (value != null) {
+                        controller.setPerPage(value);
+                      }
+                    },
+                    columns: const <DataColumn>[
+                      DataColumn(
+                        label: Text('NIK'),
                       ),
                       DataColumn(
-                        label: Text('Column B'),
-                      ),
-                      DataColumn(
-                        label: Text('Column C'),
-                      ),
-                      DataColumn(
-                        label: Text('Column D'),
-                      ),
-                      DataColumn2(
-                        label: Text('Column NUMBERS'),
+                        label: Text('Nama'),
+                        tooltip:
+                            'The total amount of food energy in the given serving size.',
                         numeric: true,
-                        size: ColumnSize.L,
+                      ),
+                      DataColumn(
+                        label: Text('Divisi'),
+                        numeric: true,
+                      ),
+                      DataColumn(
+                        label: Text('Jabatan'),
+                        numeric: true,
+                      ),
+                      DataColumn(
+                        label: Text('Role Akses'),
+                        numeric: true,
+                      ),
+                      DataColumn(
+                        label: Text('Status Karyawan'),
+                        numeric: true,
+                      ),
+                      DataColumn(
+                        label: Text('Masa Kerja'),
+                        tooltip:
+                            'The amount of calcium as a percentage of the recommended daily amount.',
+                        numeric: true,
+                      ),
+                      DataColumn(
+                        label: Text('*'),
+                        numeric: true,
                       ),
                     ],
-                    rows: List<DataRow>.generate(
-                        100,
-                        (index) => DataRow(cells: [
-                              DataCell(Text('A' * (10 - index % 10))),
-                              DataCell(Text('B' * (10 - (index + 5) % 10))),
-                              DataCell(Text('C' * (15 - (index + 5) % 10))),
-                              DataCell(Text('D' * (15 - (index + 10) % 10))),
-                              DataCell(Text(((index + 0.1) * 25.4).toString()))
-                            ]))),
-              ),
-            )
+                    source: DessertDataSource(),
+                  )),
+            ))
           ],
         ),
       ),

@@ -25,8 +25,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: bgColor,
-        textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
-            .apply(bodyColor: Colors.white),
+        cardColor: secondaryColor,
+        dividerColor: secondaryColor,
+        textTheme: GoogleFonts.latoTextTheme(Theme.of(context).textTheme)
+            .apply(bodyColor: Colors.white, displayColor: Colors.white),
         canvasColor: secondaryColor,
       ),
       title: "Application",

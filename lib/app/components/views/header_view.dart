@@ -1,4 +1,5 @@
 import 'package:accounting_project/app/components/controllers/components_controller.dart';
+import 'package:accounting_project/app/routes/app_pages.dart';
 import 'package:accounting_project/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -75,7 +76,8 @@ class ProfileCard extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(left: 20, right: 10),
           child: IconButton(
-              onPressed: () => print('logout'), icon: const Icon(Icons.logout)),
+              onPressed: () => Get.offAllNamed(Routes.LOGIN),
+              icon: const Icon(Icons.logout)),
         )
       ],
     );

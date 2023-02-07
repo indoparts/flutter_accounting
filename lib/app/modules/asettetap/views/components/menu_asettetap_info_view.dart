@@ -1,8 +1,10 @@
 import 'package:accounting_project/app/models/MenuKelolaAsetTetapInfo.dart';
+import 'package:accounting_project/app/routes/app_pages.dart';
 import 'package:accounting_project/constants.dart';
 import 'package:accounting_project/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 class MenuKasBankInfoView extends StatelessWidget {
   const MenuKasBankInfoView({
@@ -126,7 +128,32 @@ class FileInfoCard extends StatelessWidget {
                     .caption!
                     .copyWith(color: Colors.white70),
               ),
-              TextButton(onPressed: () {}, child: Text('Cek'))
+              TextButton(
+                  onPressed: () {
+                    switch (info.page) {
+                      case "/pengaturan-asettetap":
+                        Get.offAllNamed(Routes.PENGATURAN_ASETTETAP);
+                        break;
+                      case "/perubahan-asettetap":
+                        Get.offAllNamed(Routes.PERUBAHAN_ASETTETAP);
+                        break;
+                      case "/disposisi-asettetap":
+                        Get.offAllNamed(Routes.DISPOSISI_ASETTETAP);
+                        break;
+                      case "/transfer-asettetap":
+                        Get.offAllNamed(Routes.TRANSFER_ASETTETAP);
+                        break;
+                      case "/perhitungan-depresiasi-asettetap":
+                        Get.offAllNamed(
+                            Routes.PERHITUNGAN_DEPRESIASI_ASETTETAP);
+                        break;
+                      case "/kategori-asettetap-kena-pajak":
+                        Get.offAllNamed(Routes.KATEGORI_ASETTETAP_KENA_PAJAK);
+                        break;
+                      default:
+                    }
+                  },
+                  child: Text('Lihat'))
             ],
           )
         ],

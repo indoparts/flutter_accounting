@@ -1,8 +1,10 @@
 import 'package:accounting_project/app/models/MenuManufakturInfo.dart';
+import 'package:accounting_project/app/routes/app_pages.dart';
 import 'package:accounting_project/constants.dart';
 import 'package:accounting_project/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 class MenuKasBankInfoView extends StatelessWidget {
   const MenuKasBankInfoView({
@@ -126,7 +128,36 @@ class FileInfoCard extends StatelessWidget {
                     .caption!
                     .copyWith(color: Colors.white70),
               ),
-              TextButton(onPressed: () {}, child: Text('Cek'))
+              TextButton(
+                  onPressed: () {
+                    switch (info.page) {
+                      case "/biaya-standar-produksi-manufaktur":
+                        Get.offAllNamed(
+                            Routes.BIAYA_STANDAR_PRODUKSI_MANUFAKTUR);
+                        break;
+                      case "/formula-produksi-manufaktur":
+                        Get.offAllNamed(Routes.FORMULA_PRODUKSI_MANUFAKTUR);
+                        break;
+                      case "/rencana-produksi-manufaktur":
+                        Get.offAllNamed(Routes.RENCANA_PRODUKSI_MANUFAKTUR);
+                        break;
+                      case "/perintah-kerja-manufaktur":
+                        Get.offAllNamed(Routes.PERINTAH_KERJA_MANUFAKTUR);
+                        break;
+                      case "/tahapan-produksi-manufaktur":
+                        Get.offAllNamed(Routes.TAHAPAN_PRODUKSI_MANUFAKTUR);
+                        break;
+                      case "/pemenuhan-bahan-baku-manufaktur":
+                        Get.offAllNamed(Routes.PEMENUHAN_BAHAN_BAKU_MANUFAKTUR);
+                        break;
+                      case "/alokasi-biaya-produksi-manufaktur":
+                        Get.offAllNamed(
+                            Routes.ALOKASI_BIAYA_PRODUKSI_MANUFAKTUR);
+                        break;
+                      default:
+                    }
+                  },
+                  child: Text('Lihat'))
             ],
           )
         ],

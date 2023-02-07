@@ -6,10 +6,12 @@ class TextFieldView extends StatelessWidget {
     Key? key,
     required this.hintText,
     required this.suffixWidget,
+    required this.color,
   }) : super(key: key);
 
   final String hintText;
   final Widget suffixWidget;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class TextFieldView extends StatelessWidget {
       style: const TextStyle(height: 1),
       decoration: InputDecoration(
         hintText: hintText,
-        fillColor: secondaryColor,
+        fillColor: color,
         filled: true,
         border: const OutlineInputBorder(
           borderSide: BorderSide.none,

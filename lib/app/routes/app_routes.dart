@@ -3,6 +3,8 @@ part of 'app_pages.dart';
 
 abstract class Routes {
   Routes._();
+  static const LOGIN = _Paths.LOGIN;
+
   // UMUM PAGE GROUP::STARTED
   static const HOME = _Paths.HOME;
   static const PENGGUNA_UMUM = _Paths.PENGGUNA_UMUM;
@@ -18,8 +20,6 @@ abstract class Routes {
   // UMUM PAGE GROUP::ENDED
 
   static const PERPAJAKAN = _Paths.PERPAJAKAN;
-  static const MANUFAKTUR = _Paths.MANUFAKTUR;
-  static const ASETTETAP = _Paths.ASETTETAP;
 
   // PENJUALAN PAGE GROUP::STARTED
   static const TRANSACTION = _Paths.TRANSACTION;
@@ -83,10 +83,38 @@ abstract class Routes {
   static const REKENING_KORAN_KASBANK = _Paths.REKENING_KORAN_KASBANK;
   static const REKONSILIASI_BANK_KASBANK = _Paths.REKONSILIASI_BANK_KASBANK;
   // KAS BANK PAGE GROUP::ENDED
+
+  // ASET TETAP PAGE GROUP::STARTED
+  static const ASETTETAP = _Paths.ASETTETAP;
+  static const PENGATURAN_ASETTETAP = _Paths.PENGATURAN_ASETTETAP;
+  static const PERUBAHAN_ASETTETAP = _Paths.PERUBAHAN_ASETTETAP;
+  static const DISPOSISI_ASETTETAP = _Paths.DISPOSISI_ASETTETAP;
+  static const TRANSFER_ASETTETAP = _Paths.TRANSFER_ASETTETAP;
+  static const PERHITUNGAN_DEPRESIASI_ASETTETAP =
+      _Paths.PERHITUNGAN_DEPRESIASI_ASETTETAP;
+  static const KATEGORI_ASETTETAP_KENA_PAJAK =
+      _Paths.KATEGORI_ASETTETAP_KENA_PAJAK;
+  // ASET TETAP PAGE GROUP::ENDED
+
+  // MANUFAKTUR PAGE GROUP::STARTED
+  static const MANUFAKTUR = _Paths.MANUFAKTUR;
+  static const BIAYA_STANDAR_PRODUKSI_MANUFAKTUR =
+      _Paths.BIAYA_STANDAR_PRODUKSI_MANUFAKTUR;
+  static const FORMULA_PRODUKSI_MANUFAKTUR = _Paths.FORMULA_PRODUKSI_MANUFAKTUR;
+  static const RENCANA_PRODUKSI_MANUFAKTUR = _Paths.RENCANA_PRODUKSI_MANUFAKTUR;
+  static const PERINTAH_KERJA_MANUFAKTUR = _Paths.PERINTAH_KERJA_MANUFAKTUR;
+  static const TAHAPAN_PRODUKSI_MANUFAKTUR = _Paths.TAHAPAN_PRODUKSI_MANUFAKTUR;
+  static const PEMENUHAN_BAHAN_BAKU_MANUFAKTUR =
+      _Paths.PEMENUHAN_BAHAN_BAKU_MANUFAKTUR;
+  static const ALOKASI_BIAYA_PRODUKSI_MANUFAKTUR =
+      _Paths.ALOKASI_BIAYA_PRODUKSI_MANUFAKTUR;
+  // MANUFAKTUR PAGE GROUP::ENDED
 }
 
 abstract class _Paths {
   _Paths._();
+  static const LOGIN = '/login';
+
   static const HOME = '/home';
   static const PENGGUNA_UMUM = '/pengguna-umum';
   static const MULTI_MATA_UANG = '/multi-mata-uang-umum';
@@ -155,4 +183,23 @@ abstract class _Paths {
   static const TRANSFER_BANK_KASBANK = '/transfer-bank-kasbank';
   static const REKENING_KORAN_KASBANK = '/rekening-koran-kasbank';
   static const REKONSILIASI_BANK_KASBANK = '/rekonsiliasi-bank-kasbank';
+
+  static const PENGATURAN_ASETTETAP = '/pengaturan-asettetap';
+  static const PERUBAHAN_ASETTETAP = '/perubahan-asettetap';
+  static const DISPOSISI_ASETTETAP = '/disposisi-asettetap';
+  static const TRANSFER_ASETTETAP = '/transfer-asettetap';
+  static const PERHITUNGAN_DEPRESIASI_ASETTETAP =
+      '/perhitungan-depresiasi-asettetap';
+  static const KATEGORI_ASETTETAP_KENA_PAJAK = '/kategori-asettetap-kena-pajak';
+
+  static const BIAYA_STANDAR_PRODUKSI_MANUFAKTUR =
+      '/biaya-standar-produksi-manufaktur';
+  static const FORMULA_PRODUKSI_MANUFAKTUR = '/formula-produksi-manufaktur';
+  static const RENCANA_PRODUKSI_MANUFAKTUR = '/rencana-produksi-manufaktur';
+  static const PERINTAH_KERJA_MANUFAKTUR = '/perintah-kerja-manufaktur';
+  static const TAHAPAN_PRODUKSI_MANUFAKTUR = '/tahapan-produksi-manufaktur';
+  static const PEMENUHAN_BAHAN_BAKU_MANUFAKTUR =
+      '/pemenuhan-bahan-baku-manufaktur';
+  static const ALOKASI_BIAYA_PRODUKSI_MANUFAKTUR =
+      '/alokasi-biaya-produksi-manufaktur';
 }

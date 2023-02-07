@@ -67,7 +67,7 @@ class SidebarView extends GetView<ComponentsController> {
           ),
           DrawerListTile(
             title: "Kelola Aset Tetap",
-            icon: Icons.apartment,
+            icon: Icons.computer,
             press: () {
               Get.offAllNamed(Routes.ASETTETAP);
             },

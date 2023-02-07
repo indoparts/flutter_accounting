@@ -1,6 +1,18 @@
 import 'package:get/get.dart';
 
 import '../modules/asettetap/bindings/asettetap_binding.dart';
+import '../modules/asettetap/page/disposisi_asettetap/bindings/disposisi_asettetap_binding.dart';
+import '../modules/asettetap/page/disposisi_asettetap/views/disposisi_asettetap_view.dart';
+import '../modules/asettetap/page/kategori_asettetap_kena_pajak/bindings/kategori_asettetap_kena_pajak_binding.dart';
+import '../modules/asettetap/page/kategori_asettetap_kena_pajak/views/kategori_asettetap_kena_pajak_view.dart';
+import '../modules/asettetap/page/pengaturan_asettetap/bindings/pengaturan_asettetap_binding.dart';
+import '../modules/asettetap/page/pengaturan_asettetap/views/pengaturan_asettetap_view.dart';
+import '../modules/asettetap/page/perhitungan_depresiasi_asettetap/bindings/perhitungan_depresiasi_asettetap_binding.dart';
+import '../modules/asettetap/page/perhitungan_depresiasi_asettetap/views/perhitungan_depresiasi_asettetap_view.dart';
+import '../modules/asettetap/page/perubahan_asettetap/bindings/perubahan_asettetap_binding.dart';
+import '../modules/asettetap/page/perubahan_asettetap/views/perubahan_asettetap_view.dart';
+import '../modules/asettetap/page/transfer_asettetap/bindings/transfer_asettetap_binding.dart';
+import '../modules/asettetap/page/transfer_asettetap/views/transfer_asettetap_view.dart';
 import '../modules/asettetap/views/asettetap_view.dart';
 import '../modules/bukubesar/bindings/bukubesar_binding.dart';
 import '../modules/bukubesar/page/akun_perkiraan_bukubesar/bindings/akun_perkiraan_bukubesar_binding.dart';
@@ -49,7 +61,23 @@ import '../modules/kasbank/page/rekonsiliasi_bank_kasbank/views/rekonsiliasi_ban
 import '../modules/kasbank/page/transfer_bank_kasbank/bindings/transfer_bank_kasbank_binding.dart';
 import '../modules/kasbank/page/transfer_bank_kasbank/views/transfer_bank_kasbank_view.dart';
 import '../modules/kasbank/views/kasbank_view.dart';
+import '../modules/login/bindings/login_binding.dart';
+import '../modules/login/views/login_view.dart';
 import '../modules/manufaktur/bindings/manufaktur_binding.dart';
+import '../modules/manufaktur/page/alokasi_biaya_produksi_manufaktur/bindings/alokasi_biaya_produksi_manufaktur_binding.dart';
+import '../modules/manufaktur/page/alokasi_biaya_produksi_manufaktur/views/alokasi_biaya_produksi_manufaktur_view.dart';
+import '../modules/manufaktur/page/biaya_standar_produksi_manufaktur/bindings/biaya_standar_produksi_manufaktur_binding.dart';
+import '../modules/manufaktur/page/biaya_standar_produksi_manufaktur/views/biaya_standar_produksi_manufaktur_view.dart';
+import '../modules/manufaktur/page/formula_produksi_manufaktur/bindings/formula_produksi_manufaktur_binding.dart';
+import '../modules/manufaktur/page/formula_produksi_manufaktur/views/formula_produksi_manufaktur_view.dart';
+import '../modules/manufaktur/page/pemenuhan_bahan_baku_manufaktur/bindings/pemenuhan_bahan_baku_manufaktur_binding.dart';
+import '../modules/manufaktur/page/pemenuhan_bahan_baku_manufaktur/views/pemenuhan_bahan_baku_manufaktur_view.dart';
+import '../modules/manufaktur/page/perintah_kerja_manufaktur/bindings/perintah_kerja_manufaktur_binding.dart';
+import '../modules/manufaktur/page/perintah_kerja_manufaktur/views/perintah_kerja_manufaktur_view.dart';
+import '../modules/manufaktur/page/rencana_produksi_manufaktur/bindings/rencana_produksi_manufaktur_binding.dart';
+import '../modules/manufaktur/page/rencana_produksi_manufaktur/views/rencana_produksi_manufaktur_view.dart';
+import '../modules/manufaktur/page/tahapan_produksi_manufaktur/bindings/tahapan_produksi_manufaktur_binding.dart';
+import '../modules/manufaktur/page/tahapan_produksi_manufaktur/views/tahapan_produksi_manufaktur_view.dart';
 import '../modules/manufaktur/views/manufaktur_view.dart';
 import '../modules/pembelian/bindings/pembelian_binding.dart';
 import '../modules/pembelian/page/faktur_pembelian/bindings/faktur_pembelian_binding.dart';
@@ -125,9 +153,14 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.HOME;
+  static const INITIAL = Routes.LOGIN;
 
   static final routes = [
+    GetPage(
+        name: _Paths.LOGIN,
+        page: () => LoginView(),
+        binding: LoginBinding(),
+        transition: Transition.noTransition),
     GetPage(
         name: _Paths.HOME,
         page: () => HomeView(),
@@ -440,6 +473,71 @@ class AppPages {
         name: _Paths.REKONSILIASI_BANK_KASBANK,
         page: () => RekonsiliasiBankKasbankView(),
         binding: RekonsiliasiBankKasbankBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.PENGATURAN_ASETTETAP,
+        page: () => PengaturanAsettetapView(),
+        binding: PengaturanAsettetapBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.PERUBAHAN_ASETTETAP,
+        page: () => PerubahanAsettetapView(),
+        binding: PerubahanAsettetapBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.DISPOSISI_ASETTETAP,
+        page: () => DisposisiAsettetapView(),
+        binding: DisposisiAsettetapBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.TRANSFER_ASETTETAP,
+        page: () => TransferAsettetapView(),
+        binding: TransferAsettetapBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.PERHITUNGAN_DEPRESIASI_ASETTETAP,
+        page: () => PerhitunganDepresiasiAsettetapView(),
+        binding: PerhitunganDepresiasiAsettetapBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.KATEGORI_ASETTETAP_KENA_PAJAK,
+        page: () => KategoriAsettetapKenaPajakView(),
+        binding: KategoriAsettetapKenaPajakBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.BIAYA_STANDAR_PRODUKSI_MANUFAKTUR,
+        page: () => BiayaStandarProduksiManufakturView(),
+        binding: BiayaStandarProduksiManufakturBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.FORMULA_PRODUKSI_MANUFAKTUR,
+        page: () => FormulaProduksiManufakturView(),
+        binding: FormulaProduksiManufakturBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.RENCANA_PRODUKSI_MANUFAKTUR,
+        page: () => RencanaProduksiManufakturView(),
+        binding: RencanaProduksiManufakturBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.PERINTAH_KERJA_MANUFAKTUR,
+        page: () => PerintahKerjaManufakturView(),
+        binding: PerintahKerjaManufakturBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.TAHAPAN_PRODUKSI_MANUFAKTUR,
+        page: () => TahapanProduksiManufakturView(),
+        binding: TahapanProduksiManufakturBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.PEMENUHAN_BAHAN_BAKU_MANUFAKTUR,
+        page: () => PemenuhanBahanBakuManufakturView(),
+        binding: PemenuhanBahanBakuManufakturBinding(),
+        transition: Transition.noTransition),
+    GetPage(
+        name: _Paths.ALOKASI_BIAYA_PRODUKSI_MANUFAKTUR,
+        page: () => AlokasiBiayaProduksiManufakturView(),
+        binding: AlokasiBiayaProduksiManufakturBinding(),
         transition: Transition.noTransition),
   ];
 }
